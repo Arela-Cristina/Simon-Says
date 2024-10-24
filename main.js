@@ -12,11 +12,17 @@ const result = document.getElementById('result');
 //elemento notifica per il utente
 let errorMessage = document.getElementById('errorMessage')
 
+//creiamo un array vuoto lista numeri, per i numeri random
+let listaNumeri = [];
+
+//evento per generare i numeri random ogni volta che viene caricata la pagina
+window.onload = function() {
+    numberRandom();
 
 //facciamo diventare numBox in una lista che ci servira per fare la comparazione con le coincidenze. Salviamo in una variabile***
 const numEl = Array.from(numBox.getElementsByClassName('num'))
 //convertiamo i divs 'strings' a numeri interi. 
-const listaNumeri = numEl.map(function (num) {
+listaNumeri = numEl.map(function (num) {
     //ci ritorna numeri interi parseInt
     return parseInt(num.textContent);
 });
@@ -32,7 +38,7 @@ setTimeout(function () {
     console.log("prova");
     // spare il display dei numeri da memorizzare
     numBox.style.display = 'none';
-    title.textContent = 'inserisci i numeri che hai memorizzato'
+    title.textContent = 'Inserisci i numeri che hai memorizzato'
     subTitle.textContent = '(Non importa il ordine)'
 
     // appaiono invece 5 input. l'utente deve inserisce i numeri che ha visto
@@ -62,14 +68,27 @@ setTimeout(function () {
 
 }, 3000);
 
+};
+
 //dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
 checkButton.addEventListener('click', matches);
 
 
 //hoisting
+
+// funzione per generare numeri random
+function numberRandom() {
+    const numElements = numBox.getElementsByClassName('num');
+    
+    listaNumeri = Array.from(numElements).forEach(div => {
+        const randomNum = Math.floor(Math.random() * 50) + 1;
+        div.textContent = randomNum; 
+        return randomNum;
+    });
+}
+
 //per ottenere il risultato facciamo una compazione tra arrays***
 //facciamo una funzione, che poi chiameremmo by callback, al click del bottone
-
 //function per confrontare entrambi le liste di elementi
 function matches() {
     //PRIMO OBBIETIVO
