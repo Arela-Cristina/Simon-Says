@@ -10,13 +10,6 @@ const numBox = document.getElementById('numBox');
 //contenitore input num
 const containerInputBox = document.getElementById('containerInputBox');
 
-//creo un elemento input per inserire i numeri
-// let inputBox = document.createElement('input');
-// //aggiungiamo una nuova classe
-// inputBox.classList.add('num')
-// //costruiammo il nuovo elemento
-// inputBox.innerHTML = '<input type="number" id="inputNum"  min="1" max="50">'
-
 // Dopo 30 secondi i numeri scompaiono
 setTimeout(function () {
     console.log("prova");
@@ -30,7 +23,6 @@ setTimeout(function () {
         inputBox += `<input type="number" id="inputNum${i + 1}" class="num" min="1" max="50">`;
     }
     // containerInputBox.appendChild(inputBox)
-    //assegniamo i nuovi input a una nuova variabile atraverso innerHTML
     containerInputBox.innerHTML = inputBox;
 }, 3000);
 
