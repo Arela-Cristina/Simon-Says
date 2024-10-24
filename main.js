@@ -1,4 +1,5 @@
-
+//elemento titleBoc
+const mainTitleBox = document.querySelector('.mainTitleBox');
 //elemento title
 const title = document.getElementById('title');
 //elemento subtitle
@@ -11,6 +12,8 @@ const checkButton = document.getElementById('checkButton');
 const result = document.getElementById('result');
 //elemento notifica per il utente
 let errorMessage = document.getElementById('errorMessage')
+//elemento immagine
+const willSmith = document.getElementById('willSmith')
 
 //creiamo un array vuoto lista numeri, per i numeri random
 let listaNumeri = [];
@@ -38,8 +41,10 @@ setTimeout(function () {
     console.log("prova");
     // spare il display dei numeri da memorizzare
     numBox.style.display = 'none';
-    title.textContent = 'Inserisci i numeri che hai memorizzato'
+    willSmith.style.display = 'none';
+    title.textContent = 'Inserisci i numeri che hai memorizzato';
     subTitle.textContent = '(Non importa il ordine)'
+    mainTitleBox.style.height = '5rem';
 
     // appaiono invece 5 input. l'utente deve inserisce i numeri che ha visto
     //creiamo 5 nuovi input nuovi con un ciclo for
@@ -66,7 +71,7 @@ setTimeout(function () {
         });
     });
 
-}, 3000);
+}, 3_000);
 
 };
 
