@@ -40,6 +40,11 @@ h2 {
     display: none
 }
 
+.styleinvalidCaracter {
+    color: orange;
+    display: none
+}
+
 .double {
     border: 2px solid orange;
     background-color: #fff5cc;
