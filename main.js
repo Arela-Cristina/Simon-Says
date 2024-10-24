@@ -4,6 +4,9 @@ const numBox = document.getElementById('numBox');
 const checkButton = document.getElementById('checkButton');
 //elemento resultato delle conicidenze
 const result = document.getElementById('result');
+//elemento notifica per il utente
+let errorMessage = document.getElementById('errorMessage')
+
 
 //facciamo diventare numBox in una lista che ci servira per fare la comparazione con le coincidenze. Salviamo in una variabile***
 const numEl = Array.from(numBox.getElementsByClassName('num'))
@@ -100,6 +103,7 @@ function checkDoubles() {
     //salvo gli input ancora, per poi invocare la funzione
     const inputs = containerInputBox.getElementsByTagName('input');
     const list = []; //array vuoto per pushare gli input
+   
 
     //faccio una lista con Array.from . ed eseguo un'azione per ogni elemento grazie a forEach(){}
     //parametro 'input'
