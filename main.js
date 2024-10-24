@@ -16,13 +16,14 @@ setTimeout(function () {
     // prova
     numBox.style.display = 'none';
 
+    // appaiono invece 5 input. l'utente deve inserisce i numeri che ha visto
     //creiamo 5 nuovi input nuovi con un ciclo for
     let inputBox = '';
 
     for (let i = 0; i < 5; i++) {
         inputBox += `<input type="number" id="inputNum${i + 1}" class="num" min="1" max="50">`;
     }
-    // containerInputBox.appendChild(inputBox)
+    // inseriamo le input create con la proprieta innerHTML
     containerInputBox.innerHTML = inputBox;
 }, 3000);
 
