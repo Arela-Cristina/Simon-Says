@@ -49,7 +49,6 @@ setTimeout(function () {
 
 //per ottenere il risultato facciamo una compazione tra arrays***
 //facciamo una funzione, che poi chiameremmo by callback, al click del bottone
-
 function matches() {
     //PRIMO OBBIETIVO
     //salviamo in una variabile, la lista di input.value
@@ -58,10 +57,17 @@ function matches() {
     const inputNumeri = inputEl.map(function (input) {
         return parseInt(input.value);
     });
-    //ci facciamo ritornare il nostro array di inputs
-    return inputNumeri
+    // //ci facciamo ritornare il nostro array di inputs
+    // return inputNumeri
 
     //SECONDO OBBIETIVO
-    //confrontiamo entrambi gli array, metodo filter(parametro num). e ci facciamo ritornare il lenght delle coincidenze
-    let match = inputNumeri.filter(num => listaNumeri.includes(num)).length;
+    //confrontiamo entrambi gli array, metodo filter(parametro num). e ci facciamo ritornare il lenght(numero) delle coincidenze
+    let match = listaNumeri.filter(num => inputNumeri.includes(num)).length;
+
+    //TERZO OBBIETIVO
+    //facciamo vedere le coicidenze sullo schermo.
+    result.textContent = `Hai trovato ${match} coincidenze.`;
 }
+
+//dopo svilupare la funzione, aggiungiamo il evento click al bottone di verifica
+checkButton.addEventListener('click', matches);
