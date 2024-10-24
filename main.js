@@ -41,6 +41,12 @@ setTimeout(function () {
 }, 3000);
 
 
+
+//dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
+checkButton.addEventListener('click', matches);
+
+
+//hoisting
 //per ottenere il risultato facciamo una compazione tra arrays***
 //facciamo una funzione, che poi chiameremmo by callback, al click del bottone
 function matches() {
@@ -62,10 +68,6 @@ function matches() {
     //facciamo vedere le coicidenze sullo schermo.
     result.textContent = `Hai trovato ${match} coincidenze.`;
 }
-
-//dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
-checkButton.addEventListener('click', matches);
-
 
 
 //metodi implementati
