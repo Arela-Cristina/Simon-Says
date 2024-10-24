@@ -35,6 +35,11 @@ h2 {
     background-color: #ffe6e6;
 }
 
+.styleErrorMessage {
+    color: red;
+    display: none
+}
+
 .double {
     border: 2px solid orange;
     background-color: #fff5cc;
