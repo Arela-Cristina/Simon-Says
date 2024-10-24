@@ -14,12 +14,12 @@ const result = document.getElementById('result');
 //metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array 
 const numEl = Array.from(numBox.getElementsByClassName('num'))
 //convertiamo i divs 'strings' a numeri interi. Funzione map, prende ogni elemento del array
-const arrayNumEl = numEl.map(function (num) {
+const listaNumeri = numEl.map(function (num) {
     //ci ritorna numeri interi parseInt
     return parseInt(num.textContent);
 });
 
-console.log('Sono i numeri che dovranno indovinare jojojo', arrayNumEl)
+console.log('Sono i numeri che dovranno indovinare jojojo', listaNumeri)
 
 
 //contenitore input num
@@ -54,10 +54,14 @@ function matches() {
     //PRIMO OBBIETIVO
     //salviamo in una variabile, la lista di input.value
     const inputEl = Array.from(containerInputBox.getElementsByTagName('input'));
-    //map per prendere ogni elemento della lista
-    const arrayInputEl = inputEl.map(function (input) {
+    //prendiamo ogni elemento della lista. metodo map
+    const inputNumeri = inputEl.map(function (input) {
         return parseInt(input.value);
     });
     //ci facciamo ritornare il nostro array di inputs
-    return arrayInputEl
+    return inputNumeri
+
+    //SECONDO OBBIETIVO
+    //confrontiamo entrambi gli array, metodo filter(parametro num). e ci facciamo ritornare il lenght delle coincidenze
+    let match = inputNumeri.filter(num => listaNumeri.includes(num)).length;
 }
