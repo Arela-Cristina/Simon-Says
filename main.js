@@ -40,7 +40,7 @@ setTimeout(function () {
     result.style.display = 'flex';
 
     //controllo caratteri ripetuti e che non siano numeri
-    containerInputBox.getElementsByTagName('input');  
+    const inputs = containerInputBox.getElementsByTagName('input');  
     Array.from(inputs).forEach(input => { //faccio una lista ed esseguo uan azzione per ogni parametro-elemento-input
        
         //occorre un evento al input del utente addEventListener 'input'
