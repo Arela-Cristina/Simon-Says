@@ -11,7 +11,7 @@ h2 {
     text-align: center;
 }
 
-#numBox {
+.styleNumBox {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
