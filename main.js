@@ -10,7 +10,18 @@ const checkButton = document.getElementById('checkButton');
 //elemento resultato delle conicidenze
 const result = document.getElementById('result');
 
-// appaiono invece 5 input. Inserire i numeri che ha visto precedentemente
+//facciamo diventare numBox in un array che ci servira per fare la comparazione con le coincidenze***
+//metodo Array.from = ci ritorna un array, degli elementi class 'num'
+const numEl = Array.from(numBox.getElementsByClassName('num'))
+//convertiamo i divs 'strings' a numeri interi. Funzione map, prende ogni elemento del array
+const arrayNumEl = numEl.map(function (num) {
+    //ci ritorna numeri interi parseInt
+    return parseInt(num.textContent);
+});
+
+console.log('Sono i numeri che dovranno indovinare jojojo', arrayNumEl)
+
+
 //contenitore input num
 const containerInputBox = document.getElementById('containerInputBox');
 
@@ -35,3 +46,5 @@ setTimeout(function () {
     result.style.display = 'flex';
 }, 3000);
 
+
+//per ottenere il risultato facciamo una compazione tra arrays***
