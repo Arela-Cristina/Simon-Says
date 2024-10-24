@@ -30,7 +30,7 @@ setTimeout(function () {
     let inputBox = '';
 
     for (let i = 0; i < 5; i++) {
-        inputBox += `<input type="number" id="inputNum${i + 1}" class="num" min="1" max="50">`;
+        inputBox += `<input type="text" id="inputNum${i + 1}" class="num" min="1" max="50">`;
     }
     // inseriamo gli input creati con la proprieta innerHTML
     containerInputBox.innerHTML = inputBox;
@@ -40,8 +40,6 @@ setTimeout(function () {
     result.style.display = 'flex';
 }, 3000);
 
-
-
 //dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
 checkButton.addEventListener('click', matches);
 
@@ -49,6 +47,8 @@ checkButton.addEventListener('click', matches);
 //hoisting
 //per ottenere il risultato facciamo una compazione tra arrays***
 //facciamo una funzione, che poi chiameremmo by callback, al click del bottone
+
+//function per confrontare entrambi le liste di elementi
 function matches() {
     //PRIMO OBBIETIVO
     //salviamo in una variabile, la lista di input.value
@@ -69,10 +69,21 @@ function matches() {
     result.textContent = `Hai trovato ${match} coincidenze.`;
 }
 
+//function per validare se un elemento !NaN 
+function verifyIfIsAnum(input) {
+    //salviamo il value del input
+    const valor = input.value;
+    //se input is NaN oppure input e vuoto
+    if (isNaN(valor) || valor.trim() === '') {
+        input.classList.add('error'); //error
+    } else {
+        input.classList.remove('error'); //not error
+    }
+}
 
 //metodi implementati
 
-//metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array 
+//metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array
 
 //Funzione map, prende ogni elemento del array
 
