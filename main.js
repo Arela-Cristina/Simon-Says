@@ -11,7 +11,7 @@ const checkButton = document.getElementById('checkButton');
 const result = document.getElementById('result');
 
 //facciamo diventare numBox in un array che ci servira per fare la comparazione con le coincidenze***
-//metodo Array.from = ci ritorna un array, degli elementi class 'num'
+//metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array 
 const numEl = Array.from(numBox.getElementsByClassName('num'))
 //convertiamo i divs 'strings' a numeri interi. Funzione map, prende ogni elemento del array
 const arrayNumEl = numEl.map(function (num) {
@@ -48,3 +48,10 @@ setTimeout(function () {
 
 
 //per ottenere il risultato facciamo una compazione tra arrays***
+//facciamo una funzione, che poi chiameremmo by callback, al click del bottone
+
+function matches(){
+    const messagio = console.log('sono la funzione matches')
+    return messagio
+}
+
