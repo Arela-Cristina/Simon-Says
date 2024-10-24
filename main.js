@@ -1,3 +1,8 @@
+
+//elemento title
+const title = document.getElementById('title');
+//elemento subtitle
+const subTitle = document.querySelector('.subTitle');
 //contenitore num
 const numBox = document.getElementById('numBox');
 //elemento bottone
@@ -27,6 +32,8 @@ setTimeout(function () {
     console.log("prova");
     // spare il display dei numeri da memorizzare
     numBox.style.display = 'none';
+    title.textContent = 'inserisci i numeri che hai memorizzato'
+    subTitle.textContent = '(Non importa il ordine)'
 
     // appaiono invece 5 input. l'utente deve inserisce i numeri che ha visto
     //creiamo 5 nuovi input nuovi con un ciclo for
@@ -52,8 +59,6 @@ setTimeout(function () {
             checkDoubles();  //controllo numeri ripetuti
         });
     });
-
-
 
 }, 3000);
 
@@ -83,7 +88,7 @@ function matches() {
 
     //TERZO OBBIETIVO
     //facciamo vedere le coicidenze sullo schermo.
-    result.textContent = `Hai trovato ${match} coincidenze.`;
+    result.textContent = `Hai trovato ${match} coincidenze!!`;
 }
 
 //function per validare se un elemento !NaN 
