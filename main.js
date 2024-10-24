@@ -1,8 +1,3 @@
-// Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
-// Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-// NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini il più possibile.
-
 //contenitore num
 const numBox = document.getElementById('numBox');
 //elemento bottone
@@ -10,10 +5,9 @@ const checkButton = document.getElementById('checkButton');
 //elemento resultato delle conicidenze
 const result = document.getElementById('result');
 
-//facciamo diventare numBox in un array che ci servira per fare la comparazione con le coincidenze. Salviamo in una variabile***
-//metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array 
+//facciamo diventare numBox in una lista che ci servira per fare la comparazione con le coincidenze. Salviamo in una variabile***
 const numEl = Array.from(numBox.getElementsByClassName('num'))
-//convertiamo i divs 'strings' a numeri interi. Funzione map, prende ogni elemento del array
+//convertiamo i divs 'strings' a numeri interi. 
 const listaNumeri = numEl.map(function (num) {
     //ci ritorna numeri interi parseInt
     return parseInt(num.textContent);
@@ -38,7 +32,7 @@ setTimeout(function () {
     for (let i = 0; i < 5; i++) {
         inputBox += `<input type="number" id="inputNum${i + 1}" class="num" min="1" max="50">`;
     }
-    // inseriamo le input create con la proprieta innerHTML
+    // inseriamo gli input creati con la proprieta innerHTML
     containerInputBox.innerHTML = inputBox;
 
     //appare il display: bottone e risultato
@@ -61,7 +55,7 @@ function matches() {
     // return inputNumeri
 
     //SECONDO OBBIETIVO
-    //confrontiamo entrambi gli array, metodo filter(parametro num). e ci facciamo ritornare il lenght(numero) delle coincidenze
+    //confrontiamo entrambi gli array
     let match = listaNumeri.filter(num => inputNumeri.includes(num)).length;
 
     //TERZO OBBIETIVO
@@ -69,5 +63,15 @@ function matches() {
     result.textContent = `Hai trovato ${match} coincidenze.`;
 }
 
-//dopo svilupare la funzione, aggiungiamo il evento click al bottone di verifica
+//dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
 checkButton.addEventListener('click', matches);
+
+
+
+//metodi implementati
+
+//metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array 
+
+//Funzione map, prende ogni elemento del array
+
+//metodo filter(parametro num). e ci facciamo ritornare il lenght(numero) delle coincidenze
