@@ -94,6 +94,7 @@ function matches() {
     //PRIMO OBBIETIVO
     //salviamo in una variabile, la lista di input.value
     const inputEl = Array.from(containerInputBox.getElementsByTagName('input'));
+
     //prendiamo ogni elemento della lista. metodo map
     const inputNumeri = inputEl.map(function (input) {
         return parseInt(input.value);
