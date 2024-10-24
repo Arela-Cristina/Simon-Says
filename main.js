@@ -89,12 +89,15 @@ function matches() {
 //function per validare se un elemento !NaN 
 function verifyIfIsAnum(input) {
     //salviamo il value del input
-    const valor = input.value;
+    const valor = input.value.trim();
     //se input is NaN oppure input e vuoto .trim()
     if (isNaN(valor) || valor.trim() === '') {
         input.classList.add('error'); //error
+        document.getElementById('invalidCaracter').textContent = 'Devi inserire un numero'; // messagio carattere invalido
+        document.getElementById('invalidCaracter').style.display = 'block';
     } else {
         input.classList.remove('error'); //not error
+        document.getElementById('invalidCaracter').style.display = 'none';
     }
 }
 
@@ -111,7 +114,7 @@ function checkDoubles() {
     Array.from(inputs).forEach(input => {
         const valor = input.value.trim(); //elemento input = input.value vuoto
         if (valor === '') {
-            elementRepeat = false; // campo vuoto false
+            return; // usciamo dalla funzione
         }
         // se la mia lista include gia un elemento input
         else if (list.includes(valor)) {
