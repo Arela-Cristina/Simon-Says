@@ -81,6 +81,26 @@ function verifyIfIsAnum(input) {
     }
 }
 
+//function per controllare che non ci siano numeri uguali tra gli input
+function verificarRepetidos() {
+    //salvo gli input ancora, per poi invocare la funzione
+    const inputs = containerInputBox.getElementsByTagName('input');
+    const list = []; //array vuoto per pushare gli input
+
+    //faccio una lista con Array.from . ed eseguo un'azione per ogni elemento grazie a forEach(){}
+    //parametro 'input'
+    Array.from(inputs).forEach(input => {
+        const valor = input.value; //elemento input = input.value
+        // se la mia lista include gia un elemento input
+        if (list.includes(valor)) {
+            input.classList.add('repetido'); // notifica
+        } else {
+            input.classList.remove('repetido'); // altrimenti non notifica
+            list.push(valor); //pusho solo i numeri che non si ripetono
+        }
+    });
+}
+
 //metodi implementati
 
 //metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array
