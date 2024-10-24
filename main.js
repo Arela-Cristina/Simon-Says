@@ -38,6 +38,20 @@ setTimeout(function () {
     //appare il display: bottone e risultato
     checkButton.style.display = 'flex';
     result.style.display = 'flex';
+
+    //controllo caratteri ripetuti e che non siano numeri
+    containerInputBox.getElementsByTagName('input');  
+    Array.from(inputs).forEach(input => { //faccio una lista ed esseguo uan azzione per ogni parametro-elemento-input
+       
+        //occorre un evento al input del utente addEventListener 'input'
+        input.addEventListener('input', function() { 
+            verifyIfIsAnum(input); //controllo if !NaN
+            checkDoubles();  //controllo numeri ripetuti
+        });
+    });
+
+
+
 }, 3000);
 
 //dopo sviluppare la funzione, aggiungiamo il evento click del bottone di verifica, e facciamo occorrere tramite callback la nostra funzione matches
