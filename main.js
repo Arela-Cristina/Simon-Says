@@ -14,13 +14,15 @@ const containerInputBox = document.getElementById('containerInputBox');
 let inputBox = document.createElement('input');
 //aggiungiamo una nuova classe
 inputBox.classList.add('.num')
-
+//costruiammo il nuovo elemento
+inputBox.innerHTML = '<input type="number" id="inputNum"  min="1" max="50">'
 
 // Dopo 30 secondi i numeri scompaiono
 setTimeout(function() {
     console.log("prova");
     // prova
     numBox.style.display = 'none';
+    
     
 }, 3000);
 
