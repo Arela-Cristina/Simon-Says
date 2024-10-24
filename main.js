@@ -5,6 +5,10 @@
 
 //contenitore num
 const numBox = document.getElementById('numBox');
+//elemento bottone
+const checkButton = document.getElementById('checkButton');
+//elemento resultato delle conicidenze
+const result = document.getElementById('result');
 
 // appaiono invece 5 input. Inserire i numeri che ha visto precedentemente
 //contenitore input num
@@ -13,7 +17,7 @@ const containerInputBox = document.getElementById('containerInputBox');
 // Dopo 30 secondi i numeri scompaiono
 setTimeout(function () {
     console.log("prova");
-    // prova
+    // spare il display dei numeri da memorizzare
     numBox.style.display = 'none';
 
     // appaiono invece 5 input. l'utente deve inserisce i numeri che ha visto
@@ -25,5 +29,9 @@ setTimeout(function () {
     }
     // inseriamo le input create con la proprieta innerHTML
     containerInputBox.innerHTML = inputBox;
+
+    //appare il display: bottone e risultato
+    checkButton.style.display = 'flex';
+    result.style.display = 'flex';
 }, 3000);
 
