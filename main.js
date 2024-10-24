@@ -6,11 +6,19 @@
 //contenitore num
 const numBox = document.getElementById('numBox');
 
+// appaiono invece 5 input. Inserire i numeri che ha visto precedentemente
+//contenitore input num
+const containerInputBox = document.getElementById('containerInputBox');
+
+//creo un elemento input per inserire i numeri
+let inputBox = document.createElement('input');
+
+
 // Dopo 30 secondi i numeri scompaiono
 setTimeout(function() {
     console.log("prova");
     // prova
     numBox.style.display = 'none';
+    
 }, 3000);
 
-// appaiono invece 5 input. Inserire i numeri che ha visto precedentemente
