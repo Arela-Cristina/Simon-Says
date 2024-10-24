@@ -12,3 +12,5 @@ setTimeout(function() {
     // prova
     numBox.style.display = 'none';
 }, 3000);
+
+// appaiono invece 5 input. Inserire i numeri che ha visto precedentemente
