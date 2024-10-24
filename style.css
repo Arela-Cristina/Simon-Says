@@ -6,3 +6,24 @@
     box-sizing: border-box;
     font-family: "Playwrite GB S", cursive;
 }
+
+h2 {
+    text-align: center;
+}
+
+#numBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    min-width: 25rem;
+    width: 35rem;
+    min-height: 3.5rem;
+    align-items: center;
+}
+
+.num {
+    border: 5px solid black;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    font-weight: bolder;
+}
