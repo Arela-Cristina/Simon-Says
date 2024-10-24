@@ -73,7 +73,7 @@ function matches() {
 function verifyIfIsAnum(input) {
     //salviamo il value del input
     const valor = input.value;
-    //se input is NaN oppure input e vuoto
+    //se input is NaN oppure input e vuoto .trim()
     if (isNaN(valor) || valor.trim() === '') {
         input.classList.add('error'); //error
     } else {
@@ -105,6 +105,9 @@ function verificarRepetidos() {
 
 //metodo Array.from = ci ritorna una lista especiale degli elementi class 'num',non un Array, ma ritornandoci questa lista, ci permette uttilizzare metodi di Array
 
-//Funzione map, prende ogni elemento del array
+//Funzione map, prende ogni elemento del array e ci ritorna un nuovo array trasformato.
+
+//Funzione frutas.forEach(parametro => {}); prende ogni elemento del array(non modifica gli elementi). Non ci ritorna un array ma  ci permete di eseguere un'azione per ogni elemento.
+   
 
 //metodo filter(parametro num). e ci facciamo ritornare il lenght(numero) delle coincidenze
