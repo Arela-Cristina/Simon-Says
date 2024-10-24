@@ -102,21 +102,33 @@ function verifyIfIsAnum(input) {
 function checkDoubles() {
     //salvo gli input ancora, per poi invocare la funzione
     const inputs = containerInputBox.getElementsByTagName('input');
+    // let errorMessage = document.getElementById('mensajeError');
     const list = []; //array vuoto per pushare gli input
-   
+    let elementRepeat = false; //bandiera, ancora non ci sono num doppi
 
     //faccio una lista con Array.from . ed eseguo un'azione per ogni elemento grazie a forEach(){}
     //parametro 'input'
     Array.from(inputs).forEach(input => {
-        const valor = input.value; //elemento input = input.value
+        const valor = input.value.trim(); //elemento input = input.value vuoto
+        if (valor === '') {
+            elementRepeat = false; // campo vuoto false
+        }
         // se la mia lista include gia un elemento input
-        if (list.includes(valor)) {
+        else if (list.includes(valor)) {
             input.classList.add('double'); // notifica
+            elementRepeat = true; //bandiera true, notifica
         } else {
             input.classList.remove('double'); // altrimenti non notifica
             list.push(valor); //pusho solo i numeri che non si ripetono
         }
     });
+
+    if (elementRepeat) {
+        errorMessage.textContent = 'Hai ripetuto un numero.'; 
+        errorMessage.style.display = 'block'; 
+    } else {
+        errorMessage.style.display = 'none'; 
+    }
 }
 
 //metodi implementati
