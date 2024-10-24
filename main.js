@@ -82,7 +82,7 @@ function verifyIfIsAnum(input) {
 }
 
 //function per controllare che non ci siano numeri uguali tra gli input
-function verificarRepetidos() {
+function checkDoubles() {
     //salvo gli input ancora, per poi invocare la funzione
     const inputs = containerInputBox.getElementsByTagName('input');
     const list = []; //array vuoto per pushare gli input
@@ -93,9 +93,9 @@ function verificarRepetidos() {
         const valor = input.value; //elemento input = input.value
         // se la mia lista include gia un elemento input
         if (list.includes(valor)) {
-            input.classList.add('repetido'); // notifica
+            input.classList.add('double'); // notifica
         } else {
-            input.classList.remove('repetido'); // altrimenti non notifica
+            input.classList.remove('double'); // altrimenti non notifica
             list.push(valor); //pusho solo i numeri che non si ripetono
         }
     });
