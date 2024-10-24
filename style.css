@@ -16,9 +16,13 @@ body {
     background-color: #009688;
     padding: 2rem 2rem;
     width: 50rem;
-    min-height: 25rem;
+    min-height: 30rem;
     margin-top: 15rem;
     border-radius: 5px;
+}
+
+.titleBox {
+    padding: 1rem
 }
 
 h2 {
@@ -68,6 +72,13 @@ h2 {
 .styleErrorMessage {
     color: red;
     display: none
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 1.5rem;
 }
 
 .styleinvalidCaracter {
